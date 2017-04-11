@@ -1,0 +1,28 @@
+@import "../../../theme/styles/variables";
+
+.grid{
+     .card{
+        padding: 6px;
+        background: $info-color;
+        color: $default-color;
+        margin-bottom: 12px;
+        .card-block{
+            padding: 2px 0;
+            text-align: center;
+        }
+     }
+}
+.responsive-utilities{
+    td{
+        text-align: center;
+        vertical-align: middle;
+        &.is-visible {
+            color: #468847;
+            background-color: #dff0d8;
+        }
+        &.is-hidden{
+            color: #ccc;
+            background-color: #f9f9f9;
+        }
+    }    
+} 

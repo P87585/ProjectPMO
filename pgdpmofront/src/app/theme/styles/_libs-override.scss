@@ -1,0 +1,120 @@
+/*** Slim-scroll ***/
+.slimScrollBar, .slimScrollRail {
+  border-radius: 0px !important;
+  width: 4px !important;
+}
+
+/*** Pace ***/
+.pace {
+  .pace-progress{
+    background: $sidebar-item-active-bg-color;
+    position: absolute;
+    height: 3px;
+    z-index: 0;
+  }
+  .pace-activity{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    border-width: 1px; 
+    right: auto;
+    width: 18px;
+    height: 18px;
+    border-top-color: $main-color;
+    border-left-color: $main-color;
+  }
+} 
+
+
+
+/*** Full Calendar ***/
+.fc{
+    color: $text-color;
+}
+.fc-toolbar {  
+    button{
+        border-radius: 0 !important;
+        background: transparent;
+        border: 1px solid $gray;
+        color: $text-color;
+        text-shadow: none !important;
+        box-shadow: none !important;
+        &:hover, &:focus, &.fc-state-active{
+            background: $main-color;
+            color: $default-color;
+        }
+        &:first-letter{
+            text-transform: capitalize
+        }
+        &.fc-state-disabled{
+            background: $gray-light;
+            &:hover{
+                cursor: not-allowed;
+            }
+        }
+    }
+    .fc-center h2{
+        font-size: 22px;
+        margin-top: 3px;
+    }
+}
+.fc-event{
+    border: none;
+}
+.fc-day-grid-event{
+    padding: 2px 4px;
+}
+.fc-unthemed .fc-divider, 
+.fc-unthemed .fc-popover .fc-header, 
+.fc-unthemed .fc-list-heading td{
+    background: $gray-light; 
+}
+.fc-list-item:hover td {
+	background-color: $gray-light; 
+}
+
+@media (max-width: 543px) {
+  .fc .fc-toolbar>*>*{
+       float: none;
+   }
+   .fc-toolbar .fc-left{
+       float: none;
+   }
+   .fc-toolbar .fc-right{
+       float: none;
+   }
+   .fc .fc-toolbar>*>:first-child{
+       vertical-align: top;
+   }
+  
+}
+
+.draggable{
+    cursor: move;
+}
+
+/*** Dropzone ***/
+.dropzone{
+    border: 2px dashed #ccc;
+    background: rgb(241, 241, 241);
+    min-height: 220px;
+    .dz-preview{
+        .dz-remove { 
+            font-size: 12px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            color: #fff;
+        }
+        &.dz-image-preview{
+            background: transparent;
+        }
+        .dz-error-mark, .dz-success-mark{
+            margin-top:-38px;
+        }
+    }
+}
+
+/*** Froala editor ***/
+.fr-wrapper{
+    min-height: 300px;
+}

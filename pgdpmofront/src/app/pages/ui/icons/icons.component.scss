@@ -1,0 +1,45 @@
+@import "../../../theme/styles/variables";
+.icon-font-awesome{
+    margin-bottom: 15px;
+    .card{
+        float: left;
+        width: 100%;
+        background: $info-color;
+        color: $default-color;
+        &:hover{
+            background: $primary-color;
+        }
+        .card-block{
+            padding: 2px 6px;
+            p{
+                font-size: 14px;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                i{
+                    margin-right: 8px;
+                }
+            }
+        }        
+    }
+}
+
+.icon-socicon{
+    .card{
+        float: left;
+        height: 100px;
+        width: 100%;
+        line-height: 1.4;
+        background: $info-color;
+        color: $default-color;
+        &:hover{
+            background: $primary-color;
+        }
+        .card-block{
+            padding: 15px;
+        }
+        p{
+            font-size: 12px;
+        }
+    }   
+}

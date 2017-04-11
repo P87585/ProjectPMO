@@ -1,0 +1,122 @@
+<div class="inbox-container">
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+            <div class="input-group input-group-sm">
+                <div class="input-group-btn">
+                    <button aria-expanded="false" aria-haspopup="true" class="btn btn-main dropdown-toggle" data-toggle="dropdown" type="button">
+                            Mail
+                    </button>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="javascript:void(0);">Mail</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Contacts</a>
+                        <a class="dropdown-item" href="javascript:void(0);">Tasks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <div class="b-btn" [style.display]="(id || !type) ? 'inline-block' : 'none'" data-toggle="tooltip" data-placement="top" data-animation="false" title="Back to {{type}}">               
+                <button (click)="getBack()" type="button" class="btn btn-secondary btn-sm">
+                    <i class="fa fa-arrow-left"></i>
+                </button>
+            </div> 
+            <div class="b-btn" *ngIf="id" data-toggle="tooltip" data-placement="top" data-animation="false" title="Archive">               
+                <button type="button" class="btn btn-secondary btn-sm">
+                    <i class="fa fa-archive"></i>
+                </button>
+            </div> 
+            <div class="b-btn" *ngIf="id" data-toggle="tooltip" data-placement="top" data-animation="false" title="Report Spam">               
+                <button type="button" class="btn btn-secondary btn-sm">
+                    <i class="fa fa-exclamation-circle"></i>
+                </button>
+            </div> 
+            <div class="b-btn" *ngIf="id" data-toggle="tooltip" data-placement="top" data-animation="false" title="Delete">               
+                <button (click)="trash()" type="button" class="btn btn-secondary btn-sm">
+                    <i class="fa fa-trash"></i>
+                </button>
+            </div> 
+         
+            <div class="b-btn" [style.display]="(router.url == '/pages/mail/mail-compose' || id) ? 'none' : 'inline-block'" data-toggle="tooltip" data-placement="top" data-animation="false" title="Refresh">
+                <button type="button" class="btn btn-secondary btn-sm"><span class="fa fa-refresh"></span></button>
+            </div> 
+            <div class="b-btn" [style.display]="(router.url == '/pages/mail/mail-compose') ? 'none' : 'inline-block'">
+                <div class="input-group input-group-sm d-inline">
+                    <div class="input-group-btn d-inline">
+                        <button aria-expanded="false" aria-haspopup="true" class="btn btn-secondary dropdown-toggle" data-toggle="dropdown" type="button">
+                                More
+                        </button>
+                        <div class="dropdown-menu m-t-15">
+                            <a class="dropdown-item" href="javascript:void(0);" (click)="setAsRead()">Mark as read</a>
+                            <a class="dropdown-item" href="javascript:void(0);" (click)="setAsUnRead()">Mark as unread</a>
+                            <a class="dropdown-item" href="javascript:void(0);" (click)="deleteCheckedMail()">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+            <div class="pull-right">
+                <span class="inbox-paging"><b>1</b>–<b>50</b> of <b>277</b></span>
+                <div class="input-group input-group-sm d-inline">
+                    <div class="input-group-btn d-inline">
+                        <button type="button" class="btn btn-secondary">
+                            <span class="fa fa-chevron-left"></span>
+                        </button>
+                        <button type="button" class="btn btn-secondary">
+                            <span class="fa fa-chevron-right"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr />
+
+    <div class="row">
+        <div class="col-sm-3 col-md-2">
+            <a [routerLink]="['mail-compose']" class="btn btn-danger btn-sm btn-block" role="button">COMPOSE</a>
+            <hr />
+            <ul class="nav flex-column">
+                <li class="nav-item"><a [routerLink]="['mail-list/inbox']"><span class="badge badge-pill badge-main pull-right">7</span> Inbox </a></li>
+                <li class="nav-item"><a [routerLink]="['mail-list/starred']">Starred</a></li>                
+                <li class="nav-item"><a [routerLink]="['mail-list/sent']">Sent Mail</a></li>
+                <li class="nav-item"><a [routerLink]="['mail-list/drafts']"><span class="badge badge-pill badge-main pull-right">2</span>Drafts</a></li>           
+                <li class="nav-item"><a [routerLink]="['mail-list/trash']">Trash</a></li>
+            </ul>
+            <hr/>
+            <ul class="nav flex-column">
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#circles" aria-expanded="false" aria-controls="circles"><i class="fa fa-caret-down pull-right"></i> Circles </a>                  
+                    <div class="collapse" id="circles">
+                       <ul class="nav flex-column">
+                          <li class="nav-item"><a href="#"><i class="fa fa-circle-o text-muted pull-right"></i> Friends </a></li>
+                          <li class="nav-item"><a href="#"><i class="fa fa-circle-o text-muted pull-right"></i> Family </a></li>
+                          <li class="nav-item"><a href="#"><i class="fa fa-circle-o text-muted pull-right"></i> Work </a></li>
+                       </ul>
+                    </div>                   
+                </li>
+                <li class="nav-item"><a href="#">Notes</a></li>
+                <li class="nav-item"><a href="#">Personal</a></li>
+                <li class="nav-item"><a href="#">Travel</a></li>                   
+                <li class="nav-item">
+                    <a data-toggle="collapse" href="#more" aria-expanded="false" aria-controls="more"><i class="fa fa-caret-down pull-right"></i> More </a>                  
+                    <div class="collapse" id="more">
+                        <ul class="nav flex-column">
+                            <li class="nav-item"><a href="#"><i class="fa fa-circle text-danger pull-right"></i> Chats </a></li>
+                            <li class="nav-item"><a href="#"><i class="fa fa-circle text-white pull-right"></i> Spam </a></li>
+                            <li class="nav-item"><a href="#"><i class="fa fa-circle pull-right"></i> Trash </a></li>
+                        </ul>
+                    </div>                   
+                </li>
+            </ul>          
+        </div>
+        <div class="col-sm-9 col-md-10">
+            <div class="inbox-body">
+                <router-outlet></router-outlet>
+            </div>            
+        </div>
+    </div>
+
+    <hr />
+
+
+</div>
+

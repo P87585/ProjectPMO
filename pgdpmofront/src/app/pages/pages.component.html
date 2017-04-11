@@ -1,0 +1,36 @@
+<az-navbar></az-navbar>
+<div class="container-fluid">         
+    <div class="row"> 
+        <az-menu></az-menu>
+        <div class="main-wrapper"  [ngClass]="{'menu-collapsed': isMenuCollapsed}"> 
+            <div class="az-overlay" *ngIf="!isMenuCollapsed" (click)="hideMenu()"></div>
+
+            <div class="main">
+                <az-breadcrumb></az-breadcrumb>
+                <router-outlet></router-outlet>
+            </div> 
+
+          
+
+
+            <footer class="footer text-center clearfix">
+                <div class="footer-main pull-left  clearfix">
+                    <div class="copyright pull-left">&copy; <a class="font-weight-bold" href="http://pegadaian.co.id">PT Pegadaian - Division of Information Technology</a> 2017</div>
+                    <!--<ul class="share clearfix pull-left">
+                        <li><a href="https://www.facebook.com/themeseason" target="_blank"><i class="socicon socicon-facebook transition"></i></a></li>
+                        <li><a href="https://twitter.com/themeseason" target="_blank"><i class="socicon socicon-twitter transition"></i></a></li>
+                        <li><a href="https://www.instagram.com/themeseason" target="_blank"><i class="socicon socicon-instagram transition"></i></a></li>
+                        <li><a href="https://www.pinterest.com/themeseason" target="_blank"><i class="socicon socicon-pinterest transition"></i></a></li>              
+                    </ul>-->
+                </div>
+
+
+                <!--<div class="pull-right created">Created with <i class="fa fa-heart"></i> </div>-->
+                
+            </footer>
+
+            <az-back-top position="200"></az-back-top>
+
+        </div>
+    </div>
+</div>

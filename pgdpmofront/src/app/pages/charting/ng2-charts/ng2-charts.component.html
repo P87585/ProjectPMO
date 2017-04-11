@@ -1,0 +1,179 @@
+<div class="row">    
+    <div class="col-xl-6 col-lg-6 col-12 bottom-30">
+        <div widget class="card">
+            <div class="card-header">
+                <span>Vertical Bar Chart</span>
+                <div class="widget-controls">              
+                    <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                    <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>              
+                    <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+                </div>        
+            </div>
+            <div class="card-block widget-body">
+                <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [colors]="barChartColors"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+        </div>
+    </div>
+     <div class="col-xl-6 col-lg-6 col-12 bottom-30">
+        <div widget class="card">
+            <div class="card-header">
+                <span>Horizontal Bar Chart</span>
+                <div class="widget-controls">              
+                    <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                    <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>              
+                    <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+                </div>        
+            </div>
+            <div class="card-block widget-body">
+                <canvas baseChart
+                    [datasets]="barChartData"
+                    [labels]="barChartLabels"
+                    [options]="barChartOptions"
+                    [colors]="barChartColors"
+                    [legend]="barChartLegend"
+                    [chartType]="barChartTypeH"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">    
+    <div class="col-xl-12 col-lg-12 col-12 bottom-30">
+        <div widget class="card">
+            <div class="card-header">
+                <span>Line Chart</span>
+                <div class="widget-controls">              
+                    <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                    <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>              
+                    <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+                </div>        
+            </div>
+            <div class="card-block widget-body">
+                <canvas baseChart
+                    [datasets]="lineChartData"
+                    [labels]="lineChartLabels"
+                    [legend]="lineChartLegend"
+                    [options]="lineChartOptions"
+                    [colors]="lineChartColors"
+                    [chartType]="lineChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-xl-6 col-lg-6 col-12 bottom-30">
+        <div widget class="card">
+            <div class="card-header">
+                <span>Doughnut Chart</span>
+                <div class="widget-controls">              
+                    <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                    <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>              
+                    <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+                </div>        
+            </div>
+            <div class="card-block widget-body">
+                <canvas baseChart
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    [legend]="doughnutChartLegend"
+                    [options]="doughnutChartOptions"
+                    [colors]="doughnutChartColors"
+                    [chartType]="doughnutChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+        </div>
+    </div> 
+    <div class="col-xl-6 col-lg-6 col-12 bottom-30">
+        <div widget class="card">
+            <div class="card-header">
+                <span>Pie Chart</span>
+                <div class="widget-controls">              
+                    <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                    <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>              
+                    <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+                </div>        
+            </div>
+            <div class="card-block widget-body">
+                <canvas baseChart
+                    [data]="doughnutChartData"
+                    [labels]="doughnutChartLabels"
+                    [legend]="doughnutChartLegend"
+                    [options]="doughnutChartOptions"
+                    [colors]="doughnutChartColors"
+                    [chartType]="pieChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+        </div>
+    </div> 
+</div>
+
+<div class="row">  
+    <div class="col-xl-6 col-lg-6 col-12 bottom-30">
+        <div widget class="card">
+            <div class="card-header">
+                <span>Radar Chart</span>
+                <div class="widget-controls">              
+                    <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                    <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>              
+                    <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+                </div>        
+            </div>
+            <div class="card-block widget-body">
+                <canvas baseChart
+                    [datasets]="radarChartData"
+                    [labels]="radarChartLabels"
+                    [legend]="radarChartLegend"
+                    [options]="radarChartOptions"
+                    [colors]="radarChartColors"
+                    [chartType]="radarChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+        </div>
+    </div> 
+    <div class="col-xl-6 col-lg-6 col-12 bottom-30">
+        <div widget class="card">
+            <div class="card-header">
+                <span>Polar Area Chart</span>
+                <div class="widget-controls">              
+                    <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                    <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>              
+                    <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+                </div>        
+            </div>
+            <div class="card-block widget-body">
+                <canvas baseChart
+                    [data]="polarAreaChartData"
+                    [labels]="polarAreaChartLabels"
+                    [legend]="polarAreaChartLegend"
+                    [options]="polarAreaChartOptions"
+                    [colors]="polarAreaChartColors"
+                    [chartType]="polarAreaChartType"
+                    (chartHover)="chartHovered($event)"
+                    (chartClick)="chartClicked($event)">
+                </canvas>
+            </div>
+        </div>
+    </div> 
+</div>

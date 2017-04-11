@@ -1,0 +1,30 @@
+<div class="table-header">
+     <div class="abc-checkbox inbox-checkbox">    
+        <input id="toggle-all" type="checkbox" [(ngModel)]="isAllSelected" (click)="toggleAll()">      
+        <label for="toggle-all"></label>
+    </div>
+    <div class="w-200 pull-right">
+         <input class="form-control form-control-sm" id="table-search-input" [(ngModel)]="searchText" type="text" placeholder="Search mail...">
+    </div>
+</div>
+<div class="table-responsive">
+    <table class="table inbox-table">
+        <tbody>
+            <tr *ngFor="let mail of mails | async | MailSearch : searchText" [ngClass]="{'unread': mail.unread, 'selected': mail.selected}">
+                <td class="mail-checkbox">
+                    <div class="abc-checkbox inbox-checkbox">
+                        <input id="checkbox{{mail.id}}" type="checkbox" [(ngModel)]="mail.selected" (ngModelChange)="toggleOne()">                      
+                        <label attr.for="checkbox{{mail.id}}"></label>
+                    </div>
+                </td>
+                <td class="mail-star" *ngIf="router.url != '/pages/mail/mail-list/trash'">
+                    <i class="fa" [ngClass]="{'fa-star': mail.starred, 'fa-star-o': !mail.starred}" (click)="changeStarStatus(mail)"></i>
+                </td>           
+                <td (click)="goToDetail(mail)" class="sender">{{ mail.sender }}</td>
+                <td (click)="goToDetail(mail)" class="subject" [innerHTML]="mail.subject"></td>
+                <td (click)="goToDetail(mail)" class="attachment"><i *ngIf="mail.attachment" class="fa fa-paperclip"></i></td>
+                <td (click)="goToDetail(mail)" class="date">{{mail.date}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

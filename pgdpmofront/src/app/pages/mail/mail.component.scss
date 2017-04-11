@@ -1,0 +1,144 @@
+@import "../../theme/styles/variables";
+
+.inbox-container{
+    .b-btn{
+        display: inline-block;
+    }
+    .check-all{
+        position: relative;
+        top: 2px;
+        margin: 0 4px;
+    }
+    .inbox-paging{
+        color: $gray;
+    }
+    .inbox-checkbox{
+        display: inline-flex;
+        padding-left: 0;
+        label{
+            margin-bottom: 0;
+            padding-left: 0;
+            &::before{
+                width: 15px;
+                height: 15px;
+                margin-left:-14px;
+                border-radius: 0;
+                top:1px;
+            }
+            &::after{
+                margin-left:-15px;
+                padding-top: 1px;
+            }
+        }                
+    }
+    .nav-item{        
+        a{
+            display: block;
+            padding: 2px 3px;
+            color: $gray;
+            i{
+                margin-top: 3px;
+            }
+            &:hover{
+                background: $main-color;
+                color: #fff;
+            }           
+        }
+        ul {
+            padding-left: 4px;
+        }
+    }
+    .inbox-body{
+        background: #fff;
+    }
+    .inbox-table{
+        margin-bottom: 0;
+        > tbody > tr{
+            cursor: pointer;
+            &.unread td{
+                font-weight: bold;
+            }
+            &.selected{
+                background: #f7f7f7;
+            }
+            &:hover{
+                background: #f7f7f7;
+            }
+            > td{
+                padding: 0.4rem;
+                &.mail-checkbox{
+                    width: 34px;
+                    padding-left: 10px;
+                    .custom-control{
+                        margin-bottom: 0;
+                        padding-left: 0;
+                        .custom-control-indicator{
+                            top: 0.17rem;
+                        }
+                    }
+                    .inbox-checkbox label::after{
+                        margin-left: -15px;
+                        padding-top: 1px;
+                    }                
+                }
+                &.mail-star{
+                    width: 28px;
+                    font-size: 15px;
+                    color: rgba(0, 0, 0, 0.3);
+                    i.fa-star{
+                        color: $warning-color;
+                    }
+                }
+                &.sender{
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    max-width: 150px;
+                    overflow: hidden;
+                }
+                &.subject{                
+                    white-space: nowrap;
+                    text-overflow: ellipsis;
+                    max-width: 500px;
+                    overflow: hidden;                   
+                }
+                &.attachment{
+                    width: 24px;
+                    text-align: center;
+                }
+                &.date{
+                    width: 80px;
+                    text-align: right;
+                    padding-right: 6px;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+    .table-header{
+        padding: 0.4rem 0.6rem;
+        overflow: hidden;
+    }
+ 
+    .detail-content{
+        .avatar{
+            width: 38px;
+            height: 38px;
+            margin-right: 10px;
+            background: #e9ebee;
+            border: 1px solid #ccc;
+            color: #ccc;
+            text-align: center;
+            padding: 3px;
+            font-size: 20px;
+        }
+        .mail-date{
+            line-height: 28px;
+            margin-right: 10px;
+        }
+    }
+
+}
+
+.compose{
+    overflow: hidden;
+}

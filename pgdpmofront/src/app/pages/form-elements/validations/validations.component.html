@@ -1,0 +1,97 @@
+<div class="row">
+    <div class="col">
+        <div widget class="card">
+            <div class="card-header">
+                <span>VALIDATORS</span>
+                <div class="widget-controls">              
+                    <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                    <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>
+                    <a data-widgster="fullscreen" href="#" class="transition"><i class="fa fa-expand"></i></a>
+                    <a data-widgster="restore" href="#" class="transition"><i class="fa fa-compress"></i></a>                          
+                    <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+                </div>        
+            </div>
+            <div class="card-block widget-body">
+
+                <div class="col-md-9 col-12 offset-md-1">
+
+                    <form (ngSubmit)="onSubmit(myForm)" [formGroup]="myForm">
+                      
+                        <div class="form-group row text-sm-right">
+                            <label class="col-sm-3 form-control-label m-t-5">Simple</label>
+                            <div class="col-sm-8 text-left">
+                                <input class="form-control checking-field" type="text" formControlName="simple" required>
+                                <span class="help-block text-danger" *ngIf="myForm.get('simple').touched && myForm.get('simple').hasError('required')">Field is required</span>                              
+                            </div>
+                        </div>
+
+                        <div class="form-group row text-sm-right">
+                            <label class="col-sm-3 form-control-label m-t-5">Min length (3)</label>
+                            <div class="col-sm-8 text-left">
+                                <input class="form-control checking-field" type="text" formControlName="minLength" required>
+                                <span class="help-block" *ngIf="myForm.get('minLength').touched">
+                                    <span class="text-danger" *ngIf="myForm.get('minLength').hasError('required')">Field is required</span>
+                                    <span class="text-danger" *ngIf="myForm.get('minLength').hasError('minlength')">Minimum of 3 characters</span>
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row text-sm-right">
+                            <label class="col-sm-3 form-control-label m-t-5">Max length (10)</label>
+                            <div class="col-sm-8 text-left">
+                                <input class="form-control checking-field" type="text" formControlName="maxLength" required>
+                                <span class="help-block text-danger" *ngIf="myForm.get('maxLength').touched && myForm.get('maxLength').hasError('required')">Field is required</span>                              
+                                <span class="help-block text-danger" *ngIf="myForm.get('maxLength').touched && myForm.get('maxLength').hasError('maxlength')">Maximum of 10 characters</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row text-sm-right">
+                            <label class="col-sm-3 form-control-label m-t-5">Email</label>
+                            <div class="col-sm-8 text-left">
+                                <input class="form-control checking-field" type="email" formControlName="email" required>
+                                <span class="help-block text-danger" *ngIf="myForm.get('email').touched && myForm.get('email').hasError('required')">Email is required</span>                              
+                                <span class="help-block text-danger" *ngIf="myForm.get('email').touched && myForm.get('email').hasError('invalidEmail')">Invalid email address</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row text-sm-right">
+                            <label class="col-sm-3 form-control-label m-t-5">Password</label>
+                            <div class="col-sm-8 text-left">
+                                <input class="form-control checking-field" type="password" formControlName="password" minlength="6" required>
+                                <span class="help-block text-danger" *ngIf="myForm.get('password').touched && myForm.get('password').hasError('required')">Password is required</span>                              
+                                <span class="help-block text-danger" *ngIf="myForm.get('password').touched && myForm.get('password').hasError('minlength')">Password isn't long enough, minimum of 6 characters</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row text-sm-right">
+                            <label class="col-sm-3 form-control-label m-t-5">Confirm Password</label>
+                            <div class="col-sm-8 text-left">
+                                <input class="form-control checking-field" type="password" formControlName="confirmPassword" required>
+                                <span class="help-block text-danger" *ngIf="myForm.get('confirmPassword').touched && myForm.get('confirmPassword').hasError('required')">Password is required</span>                              
+                                <span class="help-block text-danger" *ngIf="myForm.get('confirmPassword').touched && myForm.get('confirmPassword').hasError('mismatchedPasswords')">Passwords do not match</span> 
+                            </div>
+                        </div>
+
+                        <div class="form-group row text-sm-right">
+                            <label class="col-sm-3 form-control-label m-t-5">Website</label>
+                            <div class="col-sm-8 text-left">
+                                <input class="form-control checking-field" type="text" formControlName="website" required>
+                                <span class="help-block text-danger" *ngIf="myForm.get('website').touched && myForm.get('website').hasError('required')">Website is required</span>                              
+                                <span class="help-block text-danger" *ngIf="myForm.get('website').touched && myForm.get('website').hasError('invalidUrl')">Invalid url address</span>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group row">
+                            <div class="col-sm-8 offset-sm-3 text-center">
+                                <button class="btn btn-main" type="submit" [disabled]="myForm.invalid">Validate &amp; Submit</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

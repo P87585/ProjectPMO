@@ -1,0 +1,69 @@
+@import "../../../theme/styles/variables";
+
+.bubblemap{
+    h3{
+        position: absolute;
+        left: 0;
+        right: 0;
+        font-weight: 300;
+        span{
+            font-size: 16px;
+            font-style: italic;
+            letter-spacing: 0.02em;
+        }
+    }    
+    .datamaps-bubble{
+        cursor: pointer;
+    }
+}
+
+
+.hoverinfo{
+    background-color: rgba($main-color, .7) !important;
+    color: $default-color;
+    font-weight: $font-thin;
+    letter-spacing: 0.02em;
+    padding: 6px 10px !important;
+    box-shadow: 1px 1px 5px $default-color !important;
+    border: 1px solid $default-color !important;
+    b{
+            font-size: 16px;
+            text-decoration: underline;
+    }
+}
+
+
+
+@media (max-width: 543px) { 
+    #bubble-map{
+       margin-top: 60px;
+    }
+}
+
+// Small devices (landscape phones, 544px and up)
+@media (min-width: 544px) and (max-width: 767px) { 
+    #bubble-map{
+       margin-top: 40px;
+    }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) and (max-width: 991px) { 
+    #bubble-map{
+       margin-top: 40px;
+    }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1199px) { 
+    #bubble-map{
+       margin-top: 20px;
+    }
+
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+    
+}
+

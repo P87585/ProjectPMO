@@ -1,0 +1,54 @@
+<div class="row bubblemap bottom-30">
+  <div class="col">
+        <div id="bubble-map-widget" widget class="card card-{{bgColor}}">
+          <div class="card-header">
+            <span>Bubbles Map</span>
+            <div class="widget-controls">   
+                <a href="#" class="dropdown-toggle transition setting" data-toggle="dropdown">
+                    <i class="fa fa-gear"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a title="Default BG" href="javascript:void(0)" (click)="changeBg('')">Default BG</a></li>
+                    <li><a title="Primary BG" href="javascript:void(0)" (click)="changeBg('primary')">Primary BG</a></li>
+                    <li><a title="Success BG" href="javascript:void(0)" (click)="changeBg('success')">Success BG</a></li>
+                    <li><a title="Info BG" href="javascript:void(0)" (click)="changeBg('info')">Info BG</a></li>
+                    <li><a title="Warning BG" href="javascript:void(0)" (click)="changeBg('warning')">Warning BG</a></li>
+                    <li><a title="Danger BG" href="javascript:void(0)" (click)="changeBg('danger')">Danger BG</a></li>
+                </ul>
+                <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>
+                <a data-widgster="fullscreen" href="#" class="transition"><i class="fa fa-expand"></i></a>
+                <a data-widgster="restore" href="#" class="transition"><i class="fa fa-compress"></i></a>                          
+                <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+            </div>        
+          </div>
+          <div class="card-block widget-body">
+             <h3 class="text-center">
+                Top 10 most populated cities in the world (2014) <br>
+                <span class="hidden-md-down">(Source: United Nations Statistics Department)</span>        
+             </h3>  
+             <div id="bubble-map"></div> 
+          </div>
+        </div>
+    </div>
+</div> 
+
+<div class="row arcsmap">
+  <div class="col">
+        <div id="arcs-map-widget" widget class="card">
+          <div class="card-header">
+            <span>Arcs Map</span>
+            <div class="widget-controls"> 
+                <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>
+                <a data-widgster="fullscreen" href="#" class="transition"><i class="fa fa-expand"></i></a>
+                <a data-widgster="restore" href="#" class="transition"><i class="fa fa-compress"></i></a>                          
+                <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+            </div>        
+          </div>
+          <div class="card-block widget-body">            
+             <div id="arcs-map"></div> 
+          </div>
+        </div>
+    </div>
+</div> 

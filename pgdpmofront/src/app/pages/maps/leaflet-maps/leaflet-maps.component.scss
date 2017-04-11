@@ -1,0 +1,14 @@
+@import "../../../theme/styles/variables";
+
+.leafletmap .card .card-block{
+    padding: 0;
+}
+
+#leaflet-map {
+  width: 100%;
+  height: calc(100vh - 260px);
+}
+
+.leaflet-popup-content{
+    color:$main-color;
+}

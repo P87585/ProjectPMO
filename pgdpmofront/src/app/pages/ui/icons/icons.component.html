@@ -1,0 +1,70 @@
+<div class="row bottom-30">
+    <div class="col">
+      <div widget class="card card-{{bgColor}}">
+          <div class="card-header">
+            <span>FONT AWESOME ICONS</span>
+            <div class="widget-controls">
+                <a href="#" class="dropdown-toggle transition setting" data-toggle="dropdown">
+                    <i class="fa fa-gear"></i>
+                </a>
+                <ul class="dropdown-menu">
+                    <li><a title="Default BG" href="javascript:void(0)" (click)="changeBg('')">Default BG</a></li>                  
+                    <li><a title="Success BG" href="javascript:void(0)" (click)="changeBg('success')">Success BG</a></li>                  
+                    <li><a title="Warning BG" href="javascript:void(0)" (click)="changeBg('warning')">Warning BG</a></li>
+                    <li><a title="Danger BG" href="javascript:void(0)" (click)="changeBg('danger')">Danger BG</a></li>
+                </ul>
+                <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>
+                <a data-widgster="fullscreen" href="#" class="transition"><i class="fa fa-expand"></i></a>
+                <a data-widgster="restore" href="#" class="transition"><i class="fa fa-compress"></i></a>                          
+                <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>   
+            </div>        
+          </div>
+          <div class="card-block widget-body"> 
+              <div class="row">       
+                  <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 icon-font-awesome"               
+                      *ngFor="let icon of icons.fontAwesome">
+                      <div class="card transition">
+                          <div class="card-block">
+                              <p class="card-text">
+                                  <i class="fa {{ icon }}" aria-hidden="true"></i>
+                                  <span class="sr-only"></span>fa {{ icon }} 
+                              </p>
+                          </div>
+                      </div>
+                  </div>
+              </div>  
+          </div>
+      </div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col">
+        <div widget class="card">
+          <div class="card-header">
+            <span>SOCICONS</span>
+            <div class="widget-controls"> 
+                <a data-widgster="expand" href="#" class="transition"><i class="fa fa-chevron-down"></i></a>
+                <a data-widgster="collapse" href="#" class="transition"><i class="fa fa-chevron-up"></i></a>
+                <a data-widgster="fullscreen" href="#" class="transition"><i class="fa fa-expand"></i></a>
+                <a data-widgster="restore" href="#" class="transition"><i class="fa fa-compress"></i></a>                          
+                <a data-widgster="close" href="#" class="transition"><i class="fa fa-times"></i></a>
+            </div>        
+          </div>
+          <div class="card-block widget-body">  
+              <div class="row">      
+                  <div class="col-xl-2 col-lg-3 col-md-4 col-sm-4 col-6 bottom-15 icon-socicon"               
+                      *ngFor="let icon of icons.socicons">
+                      <div class="card transition">
+                          <div class="card-block text-center">
+                              <h4 class="socicon socicon-{{ icon.id }}" [style.color]="icon.color"></h4>
+                              <p class="card-text">socicon socicon-{{ icon.id }} </p>
+                          </div>
+                      </div>
+                    </div>
+                </div>  
+            </div>
+        </div>
+    </div>
+</div>  

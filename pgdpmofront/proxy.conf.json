@@ -1,0 +1,10 @@
+{
+    "/oauth/**": {
+        "target": "http://127.0.0.1:10010",
+        "secure": false
+    },
+    "/api/**": {
+        "target": "http://127.0.0.1:9095",
+        "secure": false
+    }
+}
